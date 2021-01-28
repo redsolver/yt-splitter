@@ -1,6 +1,6 @@
 # YT-Splitter (MP3)
 
-<img src="https://github.com/redsolver/yt-splitter/raw/master/image.png">
+<img src="https://github.com/redsolver/yt-splitter/raw/main/image.png">
 
 Downloads and splits audio tracks from a YouTube video according to the chapters/tracks.
 Useful for compilations or full album uploads.
