@@ -11,8 +11,6 @@ Useful for compilations or full album uploads.
 
 ## Install
 
-WARNING: Only tested on Linux!
-
 1. Download the binary for your system from https://github.com/redsolver/yt-splitter/releases
 2. Rename it to `yt-splitter`
 3. Place it in a directory which is in your `PATH`
