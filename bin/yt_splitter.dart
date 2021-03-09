@@ -24,7 +24,11 @@ void main(List<String> arguments) async {
 
   print('YT video: $videoId...');
 
-  final path = join(cacheHome.path, 'yt-splitter', videoId);
+  final path = join( // TODO Maybe fallback to /tmp
+    Platform.isWindows ? Platform.environment['TMP'] : cacheHome.path,
+    'yt-splitter',
+    videoId,
+  );
 
   Directory(path).createSync(recursive: true);
 
