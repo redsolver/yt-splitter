@@ -189,5 +189,11 @@ String renderDuration(int x) {
 }
 
 String stripUnsafeCharacters(String text) {
-  return text.trim().replaceAll(RegExp(r'\|\/\\\?":\*<>'), '_');
+  if (Platform.isLinux) {
+    return text.trim().replaceAll('/', '_');
+  } else if (Platform.isMacOS) {
+    return text.trim().replaceAll(RegExp(r'[\/:]'), '_');
+  } else {
+    return text.trim().replaceAll(RegExp(r'[\|\/\\\?":\*<>]'), '_');
+  }
 }
