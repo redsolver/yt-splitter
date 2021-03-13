@@ -24,7 +24,8 @@ void main(List<String> arguments) async {
 
   print('YT video: $videoId...');
 
-  final path = join( // TODO Maybe fallback to /tmp
+  final path = join(
+    // TODO Maybe fallback to /tmp
     Platform.isWindows ? Platform.environment['TMP'] : cacheHome.path,
     'yt-splitter',
     videoId,
@@ -81,7 +82,7 @@ void main(List<String> arguments) async {
 
   final data = json.decode(File(jsonFilePath).readAsStringSync());
 
-  final album = data['title'].replaceAll('/', '|');
+  final album = stripUnsafeCharacters(data['title']);
 
   final artist = data['artist'] ?? data['uploader'] ?? '';
 
@@ -116,7 +117,7 @@ void main(List<String> arguments) async {
 
     alreadySeenTitles.add(chapterTitle);
 
-    chapterTitle = chapterTitle.replaceAll('/', '|');
+    chapterTitle = stripUnsafeCharacters(chapterTitle);
 
     tracknumber++;
 
@@ -185,4 +186,8 @@ String renderDuration(int x) {
     str = '${(x / 3600).floor()}:$str';
   }
   return str;
+}
+
+String stripUnsafeCharacters(String text) {
+  return text.trim().replaceAll(RegExp(r'\|\/\\\?":\*<>'), '_');
 }
