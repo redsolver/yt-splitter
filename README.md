@@ -18,5 +18,5 @@ Useful for compilations or full album uploads.
 
 ## Usage
 
-1. `cd` into the directory you want to save the tracks in. `yt-splitter` will automatically create a subdirectory with the title of the video and save the tracks in it.
+1. `cd` into the directory you want to save the tracks in. `yt-splitter` will automatically create a subdirectory with the title of the video and store the downloadeded tracks in it.
 2. Execute `yt-splitter VIDEOID` (`VIDEOID` can be a YouTube video id or a URL to a YouTube video)
