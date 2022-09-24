@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: DanTup/gh-actions/setup-dart@master
       - run: mkdir build
-      - run: pub get
+      - run: dart pub get
       - run: dart compile exe bin/yt_splitter.dart -v -o build/${{ matrix.output-name }}
       - uses: actions/upload-artifact@v1
         with:
